@@ -1,4 +1,4 @@
-var RegisterEventView = Backbone.View.extend({
+/*var RegisterEventView = Backbone.View.extend({
 
 	render: function () {
 		var html = $('#register-event-template').html();
@@ -6,4 +6,4 @@ var RegisterEventView = Backbone.View.extend({
 		return this;
 	}
 
-});
+});*/

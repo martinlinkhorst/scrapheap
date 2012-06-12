@@ -1,13 +1,22 @@
-var EventModel = Backbone.Model.extend( {
+define([
+	// backbone, jquery, underscore
+], function () {
 
-	url: 'http://'
-	defaults: {
-		name: '',
-		date: '',
-		startsAt: '',
-		endsAt: '',
-		description: '',
-		location: ''
-	}
+	var EventModel = Backbone.Model.extend( {
+		
+		defaults: {
+			name: '',
+			date: '',
+			startsAt: '',
+			endsAt: '',
+			description: '',
+			location: ''
+		}/*,
 
-})
+		url: 'http://'*/
+	})
+
+	return EventModel;
+
+});
+

@@ -1,32 +1,42 @@
-var RegisterEventView = Backbone.View.extend({
+define([
+	'models/event',
+	'text!views/register-event.html'
+], function (EventModel, RegisterEventMarkup) {
 
-	model: null,
+	var RegisterEventView = Backbone.View.extend({
 
-	initialize: function() {
-		this.model = new EventModel();
-	},
+		model: null,
 
-	events: { 
-		'click #register': '_register',
-		'change input': '_fieldsChanged' 
-	},
+		template: _.template(RegisterEventMarkup),
 
-	_fieldsChanged: function (event) {
-		var target = event.target;
-		var dataId = $(target).data('id');
-		this.model.set(dataId, target.value);
-	},
+		initialize: function() {
+			this.model = new EventModel();
+		},
 
-	_register: function(event) {
-		this.model.save();
-		//console.log('model', this.model);
-	},
+		events: { 
+			'click #register': '_register',
+			'change input': '_fieldsChanged' 
+		},
 
-	render: function () {
+		_fieldsChanged: function (event) {
+			var target = event.target;
+			var dataId = $(target).data('id');
+			this.model.set(dataId, target.value);
+		},
 
-		var html = $('#register-event-template').html();
-		this.$el.html(html);
-		return this;
-	}
+		_register: function(event) {
+			this.model.save();
+			//console.log('model', this.model);
+		},
+
+		render: function () {
+			var html = this.template();
+			this.$el.html(html);
+			return this;
+		}
+
+	});
+
+	return RegisterEventView;
 
 });
