@@ -1,0 +1,11 @@
+#app input, textarea {
+	width: 100%;	
+}
+
+#app h1, h2, h3, h4, h5, h6 {
+	padding-top: 8px;
+}
+
+.massive-height {
+	height: 320px;
+}
