@@ -1,10 +1,9 @@
 curl([
-	'views/register-event'
-	// 'libs/jquery' wrapper
+	'routers/app'
 ]).then(
-	function (RegisterEventView) {
-		var registerEventView = new RegisterEventView();
-		$('#app').html(registerEventView.render().el);
+	function (AppRouter) {
+		var appRouter = new AppRouter();
+	    Backbone.history.start();
 	},
 	function (ex) {
 		alert('error:' + ex.message);

@@ -290,6 +290,8 @@
 	input[type="date"],
 	input[type="password"],
 	input[type="email"],
+	input[type="time"],
+	input[type="number"],
 	textarea,
 	select {
 		border: 1px solid #ccc;
@@ -312,6 +314,8 @@
 	input[type="date"]:focus,
 	input[type="password"]:focus,
 	input[type="email"]:focus,
+	input[type="time"]:focus,
+	input[type="number"]:focus,	
 	textarea:focus {
 		border: 1px solid #aaa;
  		color: #444;

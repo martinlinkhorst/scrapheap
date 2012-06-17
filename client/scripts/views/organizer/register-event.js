@@ -1,6 +1,6 @@
 define([
 	'models/event',
-	'text!views/register-event.html'
+	'text!views/organizer/register-event.html'
 ], function (EventModel, RegisterEventMarkup) {
 
 	var RegisterEventView = Backbone.View.extend({
@@ -15,7 +15,7 @@ define([
 
 		events: { 
 			'click #register': '_register',
-			'change input': '_fieldsChanged' 
+			'change input': '_fieldsChanged'
 		},
 
 		_fieldsChanged: function (event) {
@@ -25,8 +25,8 @@ define([
 		},
 
 		_register: function(event) {
-			this.model.save();
-			//console.log('model', this.model);
+			// this.model.save();
+			console.log('model', this.model);
 		},
 
 		render: function () {
